@@ -11,14 +11,63 @@ function Home() {
   return (
     <div className="container mt-5">
       <div className="jumbotron text-center">
-        <h1 className="display-4">Welcome to OctoFit Tracker!</h1>
+        <h1 className="display-4">Welcome to OctoFit Tracker! 🎯</h1>
         <p className="lead">Your comprehensive fitness tracking and team competition platform</p>
         <hr className="my-4" />
-        <p>Track your activities, compete with teams, and get personalized workout suggestions.</p>
-        <div className="mt-4">
-          <Link to="/activities" className="btn btn-primary btn-lg mx-2">View Activities</Link>
-          <Link to="/leaderboard" className="btn btn-success btn-lg mx-2">Leaderboard</Link>
-          <Link to="/workouts" className="btn btn-info btn-lg mx-2">Workouts</Link>
+        <p className="mb-4">Track your activities, compete with teams, and get personalized workout suggestions.</p>
+        
+        <div className="row mt-5">
+          <div className="col-md-4 mb-4">
+            <div className="card text-center border-0 shadow-sm">
+              <div className="card-body p-4">
+                <div className="mb-3" style={{fontSize: '3rem'}}>📊</div>
+                <h5 className="card-title">Track Activities</h5>
+                <p className="card-text text-muted">Log your workouts and monitor your progress over time</p>
+                <Link to="/activities" className="btn btn-primary">View Activities</Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 mb-4">
+            <div className="card text-center border-0 shadow-sm">
+              <div className="card-body p-4">
+                <div className="mb-3" style={{fontSize: '3rem'}}>🏆</div>
+                <h5 className="card-title">Compete</h5>
+                <p className="card-text text-muted">Join teams and climb the leaderboard</p>
+                <Link to="/leaderboard" className="btn btn-success">View Leaderboard</Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-4 mb-4">
+            <div className="card text-center border-0 shadow-sm">
+              <div className="card-body p-4">
+                <div className="mb-3" style={{fontSize: '3rem'}}>💪</div>
+                <h5 className="card-title">Get Fit</h5>
+                <p className="card-text text-muted">Access personalized workout recommendations</p>
+                <Link to="/workouts" className="btn btn-info">View Workouts</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="row mt-4">
+          <div className="col-md-6 mb-3">
+            <div className="card border-0 shadow-sm">
+              <div className="card-body">
+                <h5 className="card-title">👥 Join a Team</h5>
+                <p className="card-text text-muted">Connect with like-minded fitness enthusiasts</p>
+                <Link to="/teams" className="btn btn-outline-primary btn-sm">Browse Teams</Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6 mb-3">
+            <div className="card border-0 shadow-sm">
+              <div className="card-body">
+                <h5 className="card-title">👤 View Community</h5>
+                <p className="card-text text-muted">See who's crushing their fitness goals</p>
+                <Link to="/users" className="btn btn-outline-secondary btn-sm">View Users</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -29,10 +78,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
-              <strong>OctoFit Tracker</strong>
+              <strong>🏋️ OctoFit Tracker</strong>
             </Link>
             <button 
               className="navbar-toggler" 
@@ -48,22 +97,22 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">Home</Link>
+                  <Link className="nav-link" to="/">🏠 Home</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/users">Users</Link>
+                  <Link className="nav-link" to="/users">👤 Users</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/activities">Activities</Link>
+                  <Link className="nav-link" to="/activities">📊 Activities</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/teams">Teams</Link>
+                  <Link className="nav-link" to="/teams">👥 Teams</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/leaderboard">Leaderboard</Link>
+                  <Link className="nav-link" to="/leaderboard">🏆 Leaderboard</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/workouts">Workouts</Link>
+                  <Link className="nav-link" to="/workouts">💪 Workouts</Link>
                 </li>
               </ul>
             </div>
