@@ -1,6 +1,14 @@
+import os
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from . import views
+
+# Configure base URL for Codespaces or localhost
+codespace_name = os.environ.get('CODESPACE_NAME')
+if codespace_name:
+    base_url = f"https://{codespace_name}-8000.app.github.dev"
+else:
+    base_url = "http://localhost:8000"
 
 # Create a router and register our viewsets with it
 router = DefaultRouter()
