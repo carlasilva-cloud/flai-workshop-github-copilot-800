@@ -80,8 +80,9 @@ function App() {
       <div className="App">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
-              <strong>🏋️ OctoFit Tracker</strong>
+            <Link className="navbar-brand d-flex align-items-center" to="/">
+              <img src="/octofitapp-small.svg" alt="OctoFit Logo" className="me-2" style={{width: '40px', height: '40px'}} />
+              <strong>OctoFit Tracker</strong>
             </Link>
             <button 
               className="navbar-toggler" 
