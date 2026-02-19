@@ -80,18 +80,24 @@ function Activities() {
                 <tr key={activity.id}>
                   <td><strong>#{activity.id}</strong></td>
                   <td>
-                    <span className="badge bg-secondary">{activity.user}</span>
+                    <span className="badge bg-secondary">
+                      {activity.user_name || activity.username || activity.user || 'Unknown User'}
+                    </span>
                   </td>
                   <td>
-                    <span className="badge bg-info text-dark">{activity.activity_type}</span>
+                    <span className="badge bg-info text-dark">
+                      {activity.activity_type || 'N/A'}
+                    </span>
                   </td>
-                  <td>{activity.duration}</td>
-                  <td>{activity.distance}</td>
+                  <td>{activity.duration || 0}</td>
+                  <td>{activity.distance || 0}</td>
                   <td>
-                    <strong className="text-success">{activity.calories_burned}</strong>
+                    <strong className="text-success">{activity.calories_burned || 0}</strong>
                   </td>
                   <td>
-                    <small>{new Date(activity.date).toLocaleDateString()}</small>
+                    <small>
+                      {activity.date ? new Date(activity.date).toLocaleDateString() : 'N/A'}
+                    </small>
                   </td>
                 </tr>
               ))}
