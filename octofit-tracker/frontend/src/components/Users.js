@@ -81,12 +81,12 @@ function Users() {
                     <div className="d-flex align-items-center">
                       <div className="avatar bg-primary text-white rounded-circle me-2" 
                            style={{width: '32px', height: '32px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                        {user.username.charAt(0).toUpperCase()}
+                        {user.username ? user.username.charAt(0).toUpperCase() : '?'}
                       </div>
-                      <strong>{user.username}</strong>
+                      <strong>{user.username || 'N/A'}</strong>
                     </div>
                   </td>
-                  <td>{user.email}</td>
+                  <td>{user.email || 'N/A'}</td>
                   <td>
                     {user.team ? (
                       <span className="badge bg-success">{user.team}</span>
@@ -95,7 +95,9 @@ function Users() {
                     )}
                   </td>
                   <td>
-                    <small className="text-muted">{new Date(user.date_joined).toLocaleDateString()}</small>
+                    <small className="text-muted">
+                      {user.date_joined ? new Date(user.date_joined).toLocaleDateString() : 'N/A'}
+                    </small>
                   </td>
                 </tr>
               ))}
