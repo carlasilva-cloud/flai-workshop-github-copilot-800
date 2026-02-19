@@ -54,7 +54,23 @@ function Teams() {
         </div>
         <span>Loading teams...</span>
       </div>
-    </div> onClick={handleCreateTeam}>
+    </div>
+  );
+  
+  if (error) return (
+    <div className="container mt-4">
+      <div className="alert alert-danger" role="alert">
+        <h5 className="alert-heading">Error Loading Teams</h5>
+        <p className="mb-0">{error}</p>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="container mt-4">
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h2 className="mb-0">👥 Teams</h2>
+        <button className="btn btn-primary btn-sm" onClick={handleCreateTeam}>
           <span>+ Create Team</span>
         </button>
       </div>
@@ -167,23 +183,7 @@ function Teams() {
                 </button>
               </div>
             </div>
-          </div>   </div>
-                <ul className="list-group list-group-flush">
-                  <li className="list-group-item d-flex justify-content-between align-items-center">
-                    <span><strong>👤 Members</strong></span>
-                    <span className="badge bg-primary rounded-pill">{team.member_count || 0}</span>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between align-items-center">
-                    <span><strong>📅 Created</strong></span>
-                    <small>{new Date(team.created_at).toLocaleDateString()}</small>
-                  </li>
-                </ul>
-                <div className="card-footer bg-transparent border-0">
-                  <button className="btn btn-outline-primary btn-sm w-100">View Team</button>
-                </div>
-              </div>
-            </div>
-          ))}
+          </div>
         </div>
       )}
     </div>
