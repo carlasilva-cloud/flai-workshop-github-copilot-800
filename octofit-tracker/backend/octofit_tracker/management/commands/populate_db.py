@@ -1,0 +1,1 @@
+../../core/management/commands/populate_db.py
